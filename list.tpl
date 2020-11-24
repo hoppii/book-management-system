@@ -12,6 +12,8 @@
 <td>著者</td>
 <td>出版社</td>
 <td>購入日</td>
+<td>状態</td>
+<td>操作</td>
 </thead>
 <tbody>
 %for d in data:
@@ -20,9 +22,18 @@
 <td>{{d["author"]}}</td> 
 <td>{{d["publisher"]}}</td> 
 <td>{{d["acquisitionDate"]}}</td> 
-<td><a href="/delete?id={{d["id"]}}">削除</a></td>
+<td>{{d["status"]}}</td>
+<td>
+<a href="/checkout"><input type="button" value="貸出" /></a>
+<!--
+<a href="/returned?id={{d["id"]}}"><input type="button" value="返却" /></a>
+-->
+<a href="/delete?id={{d["id"]}}"><input type="button" value="削除" /></a>
+</td>
+
 </tr>
 %end
+<p>返却期限は{{rd}}です</p>
 </tbody>
 </table>
 <p><a href="/">新規登録</a></p>
