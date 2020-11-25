@@ -14,6 +14,7 @@
 <td>購入日</td>
 <td>状態</td>
 <td>操作</td>
+<td>書評</td>
 </thead>
 <tbody>
 %for d in data:
@@ -26,14 +27,16 @@
 <td>
 <a href="/checkout"><input type="button" value="貸出" /></a>
 <!--
-<a href="/returned?id={{d["id"]}}"><input type="button" value="返却" /></a>
+<a href="/returned"><input type="button" value="返却" /></a>
 -->
 <a href="/delete?id={{d["id"]}}"><input type="button" value="削除" /></a>
 </td>
-
+<td>
+<a href="/review"><input type="button" value="新規" /></a>
+<a href="/read"><input type="button" value="みる" /></a>
+</td>
 </tr>
 %end
-<p>返却期限は{{rd}}です</p>
 </tbody>
 </table>
 <p><a href="/">新規登録</a></p>
